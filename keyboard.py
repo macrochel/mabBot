@@ -1,9 +1,10 @@
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton, KeyboardButton, ReplyKeyboardMarkup
 
 def steps():
-	steps_keyboard = ReplyKeyboardMarkup(row_width=1, resize_keyboard=True)
+	steps = ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
 	button1 = KeyboardButton("⬅️Вернуться на прошлый шаг")
-	return steps_keyboard
+	steps.add(button1)
+	return steps
 
 def menu():
 	menu_keyboard = ReplyKeyboardMarkup(row_width=3, resize_keyboard=True)
