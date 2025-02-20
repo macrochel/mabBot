@@ -102,8 +102,8 @@ def callback_query(call):
             bot.send_message(call.message.chat.id, msg)
     elif call.data == "restart":
         msg = "Давай знакомиться!\n\n👤 Напиши свое ФИО\n\nЖелательно напиши свое ФИО так как в написано у тебя в государственных документах (удостоверение личности)"
-        bot.send_message(message.chat.id, msg, reply_markup=steps())
-        bot.register_next_step_handler(message, getName)
+        bot.send_message(call.message.chat.id, msg, reply_markup=steps())
+        bot.register_next_step_handler(call.message, getName)
 
 #Functions
 def goHome(message):
