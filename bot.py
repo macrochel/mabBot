@@ -80,7 +80,7 @@ def text_message(message):
         bot.send_message(message.chat.id, msg)
         db.addColumn(coll, "consultation", message)
     elif message.text == "❓Частые вопросы":
-        msg = "https://teletype.in/@microchel.txt/QOlWJn9apeI"
+        msg = "https://teletype.in/@microchel.txt/QOlWJn9ape"
         bot.send_message(message.chat.id, msg)
 
 #Callback handler
