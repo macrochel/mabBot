@@ -111,9 +111,9 @@ def goHome(message):
         bot.send_message(message.chat.id, msg, reply_markup=menu())
 
 def sendCaptionPhoto(chatid, number, msg, keyboard):
-    path = "storage/pictures/" + str(number) + ".PNG"
+    path = "storage/pictures/" + str(number) + ".png"
     if not pather.exists(path):
-        bot.send_message(chatid, "Фото не найдено")
+        bot.send_message(chatid, f"Фото не найдено  {path}")
         return
     with open(path, "rb") as photo:
         bot.send_photo(chatid, photo, msg, reply_markup=keyboard)
