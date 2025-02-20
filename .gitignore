@@ -1,0 +1,57 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+*.env
+
+# IDE / editor specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Local development configuration
+*.config
+*.cfg
+*.conf
+
+# Logs and temporary files
+*.log
+*.bak
+*.tmp
+
+# Mac OS
+.DS_Store
+
+# Compiled Python files (if using Cython or other similar tools)
+*.pyx
+*.pyd
+*.pyo
+*.pyw
+*.pyz
+
+# Compiled Python files (if using Nuitka)
+/*.exe
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Dependency files
+pip-lock.txt
+pipfile.lock
+
+# Generated files and folders (often specific to your project)
+/generated/
+/output/
