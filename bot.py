@@ -102,7 +102,7 @@ def callback_query(call):
             bot.send_message(call.message.chat.id, msg)
     elif call.data == "restart":
         msg = "Давай знакомиться!\n\n👤 Напиши свое ФИО\n\nЖелательно напиши свое ФИО так как в написано у тебя в государственных документах (удостоверение личности)"
-        bot.send_message(call.message.chat.id, msg, reply_markup=steps())
+        bot.send_message(call.message.chat.id, msg, ReplyKeyboardRemove())
         bot.register_next_step_handler(call.message, getName)
 
 #Functions
@@ -123,8 +123,11 @@ def getName(message):
     if message.text not in filterList:
         msg = "📞 Напиши свой номер телефона в формате «+77001234567»\n\nУкажи актуальный номер телефона, на который ты 100% ответишь в рабочее время"
         bot.send_message(message.chat.id, msg, reply_markup=steps())
-        x = db.initUser(coll, message)
-        logger.info(f"✅ Новый пользователь создан: {x}")  
+        user = db.findUser(coll, message)  
+        logger.info(f"🔍 Пользователь: {user}")  
+        if user is None:
+            x = db.initUser(coll, message)
+            logger.info(f"✅ Новый пользователь создан: {x}")  
         bot.register_next_step_handler(message, getPhone)
         db.addColumn(coll, "name", message)
 
